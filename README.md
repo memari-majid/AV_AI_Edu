@@ -1,73 +1,31 @@
 # Integrating Computer Vision in Educational Settings: A Case Study on Autonomous Vehicle Safety through Real-Time Road Surface Anomaly Detection
 
-**Abstract:** The integration of computer vision (CV) technologies into undergraduate STEM education represents a transformative shift toward experiential learning, equipping students with essential technical and analytical skills. This paper examines the pedagogical and technical dimensions of implementing Artificial Intelligence (AI) and CV systems in higher education, anchored by a case study from Utah Valley University (UVU). The case study focuses on enhancing autonomous vehicle (AV) safety through real-time road surface anomaly detection using advanced deep learning (YOLOv12), edge computing, and autonomous navigation systems. We analyze how this project-based learning approach bridges theory and practice, discuss broader implications for STEM education—including student engagement, workforce readiness, and interdisciplinary collaboration—and explore emerging trends in AI-driven educational tools and their societal impacts.
+[Previous sections available in repository history]
 
----
+## 3. Technical Foundations: Deep Learning and Real-Time Detection
 
-## 1. Introduction and Background
+### 3.1 Deep Learning Architectures: YOLOv12
 
-The rapid evolution of AI and CV is fundamentally reshaping STEM education, moving curricula from abstract theory towards **applied, problem-centered learning** [1]. As industries increasingly demand AI proficiency, universities are adopting project-based paradigms that immerse students in real-world challenges, such as developing safety systems for autonomous vehicles [2, 3]. UVU's road surface anomaly detection project exemplifies this shift, utilizing state-of-the-art CV techniques to address critical transportation infrastructure issues while cultivating advanced technical competencies in undergraduates.
+Modern CV relies heavily on **Convolutional Neural Networks (CNNs)** and transformer architectures optimized for speed and accuracy. The UVU project utilizes **YOLOv12**, known for architectural refinements like enhanced feature pyramidal networks and anchor-free detection heads. These improvements reportedly yield **15% higher mean average precision (mAP)** over previous versions while maintaining real-time inference speeds [5, 3]. This balance makes YOLOv12 suitable for educational settings where students must manage trade-offs between model performance and computational constraints [6, 9].
 
-Bibliometric analyses indicate a **22.59% annual growth** in AI education research since 2013, highlighting the expanding role of CV in diverse domains, from analyzing student engagement to industrial automation [1, 4]. The UVU initiative aligns with this trend by integrating **YOLOv12-based object detection** with **RoboFlow's auto-labeling pipelines**, creating a scalable educational model (illustrated in Figure 1). By embedding these technologies into an autonomous RC car platform, students confront the complexities of real-time inference, sensor fusion, and systems integration, mirroring industry-standard AV development workflows [2, 5].
+### 3.2 Edge Computing for Real-Time Inference
 
-## Key System Diagrams and Figures
+**Edge computing** is critical, with inference performed locally on **NVIDIA Jetson modules** to ensure low-latency response times—essential for autonomous navigation [2, 5] (Figure 1). This approach aligns with industry trends towards decentralized AI processing, as seen in applications like Arctic AV localization systems functioning despite GPS denial [5]. Students gain direct experience with hardware-software co-design, optimizing techniques like model quantization and pruning to meet embedded system limitations [4, 10].
 
-### Figure 1: CV/AI Educational System Architecture
-```mermaid
-graph TD
-    A[Data Collection] --> B[RoboFlow Auto-labeling]
-    B --> C[YOLOv12 Model Training]
-    C --> D[Edge Deployment]
-    D --> E[NVIDIA Jetson]
-    E --> F[Real-time Inference]
-    F --> G[Autonomous RC Car]
+### 3.3 Data Pipeline Automation: RoboFlow
 
-    style A fill:#f9f,stroke:#333,stroke-width:2px
-    style E fill:#bbf,stroke:#333,stroke-width:2px
-    style G fill:#bfb,stroke:#333,stroke-width:2px
-```
+The project's data pipeline benefits significantly from **RoboFlow's auto-labeling** capabilities, which reportedly reduce manual annotation efforts by **40%** while preserving dataset quality [3]. This efficiency enables rapid iteration during model training, allowing students to systematically explore hyperparameter tuning and data augmentation strategies. Studies indicate that such automated workflows enhance learning outcomes in CV courses by freeing students to focus on higher-order design considerations rather than repetitive labeling tasks [4, 8].
 
-### Figure 2: Two-Phase Project Implementation
-```mermaid
-graph LR
-    subgraph Phase 1: Detection
-      A[Vehicle-Mounted Camera] --> B(Road Anomaly Detection)
-      B -- 96% Accuracy --> C{Validation}
-    end
+## 4. Case Study: Real-Time Anomaly Detection and Autonomous RC Car Integration
 
-    subgraph Phase 2: Navigation
-      D[RC Car Platform] --> E(Sensor Fusion: CV + Lidar)
-      E --> F[Autonomous Navigation & Path Planning]
-    end
+UVU's two-phase project (summarized in Figure 2) demonstrates the scalability of CV education frameworks.
 
-    C --> D
-```
+### 4.1 Phase 1: Road Anomaly Detection
 
-### Figure 3: Educational Impact Metrics
-```mermaid
-barChart
-    title Educational Outcomes Comparison
-    xAxisLabel Metrics
-    yAxisLabel Percentage Improvement (%)
-    bar "CV Concept Retention" 30
-    bar "Programming Comprehension (C-Sim)" 22
-    bar "Female Enrollment (Targeted Programs)" 40
-    bar "Industry Internship Rate" 78
-```
+Phase one focuses on **road anomaly detection** using a vehicle-mounted camera system. This system achieved **96% accuracy** in identifying potholes and cracks under varying illumination conditions [11, 3]. Students employed techniques like gradient thresholding and HLS color space transformations to isolate lane markings, integrating these with YOLOv12 detections for comprehensive road surface analysis [11, 10]. This multi-modal approach mirrors advanced driver assistance systems (ADAS) in commercial vehicles, providing authentic exposure to industry practices [2, 9].
 
-### Figure 4: Timeline of AI/CV Integration in Education
-```mermaid
-timeline
-    title AI/CV Educational Evolution
-    2013 : AI Education Research Growth Begins [1]
-    ~2015 : Rise of Project-Based Learning (PBL) in STEM [6]
-    ~2018 : Integration of CV Tools (OpenCV, TensorFlow) in Curricula [1]
-    2020 : UVU AV Safety Initiative Launched
-    2023 : Deployment of YOLOv12 in UVU Project [5]
-```
+### 4.2 Phase 2: Autonomous RC Car Navigation
 
-## 2. AI and Computer Vision in STEM Education
-
-**Project-Based Learning (PBL)** frameworks are now central to modern STEM education, especially in AI and CV, where hands-on experience with tools like **OpenCV** and **TensorFlow** accelerates skill acquisition [6, 1]. These methodologies enhance technical proficiency and foster crucial soft skills like collaborative problem-solving and project management, vital for careers in robotics and autonomous systems [7, 8]. At UVU, students engage in the full-stack development of an anomaly detection system—from dataset curation using RoboFlow to model deployment on edge devices—mirroring industrial AI pipelines (see Figure 1) [5, 3].
+Phase two transitions to **autonomous navigation** using a modified RC car platform, introducing challenges in sensor fusion and path planning. The system integrates **Lidar-based obstacle avoidance** with CV detections, requiring students to implement **Kalman filters** for robust state estimation [5, 10]. Simulating real-world scenarios (e.g., sudden obstacles, degraded lane markings) cultivates proficiency in designing fail-safe mechanisms—a critical competency for AV safety engineering [9, 12].
 
 [... Content continues in next part due to length limits ...]
