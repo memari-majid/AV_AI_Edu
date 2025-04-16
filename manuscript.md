@@ -1,0 +1,5 @@
+# Integrating Computer Vision in Educational Settings: A Case Study on Autonomous Vehicle Safety through Real-Time Road Surface Anomaly Detection
+
+**Abstract:** The integration of computer vision (CV) technologies into undergraduate STEM education represents a transformative shift toward experiential learning, equipping students with essential technical and analytical skills. This paper examines the pedagogical and technical dimensions of implementing Artificial Intelligence (AI) and CV systems in higher education, anchored by a case study from Utah Valley University (UVU). The case study focuses on enhancing autonomous vehicle (AV) safety through real-time road surface anomaly detection using advanced deep learning (YOLOv12), edge computing, and autonomous navigation systems. We analyze how this project-based learning approach bridges theory and practice, discuss broader implications for STEM education—including student engagement, workforce readiness, and interdisciplinary collaboration—and explore emerging trends in AI-driven educational tools and their societal impacts.
+
+[Rest of manuscript content...]
